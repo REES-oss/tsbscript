@@ -358,7 +358,7 @@ Title_2.TextWrapped = true
 
 -- Scripts:
 
-local function ZLBQJF_fake_script() -- MainFrame.drag 
+local function BVHVJF_fake_script() -- MainFrame.drag 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	local function makeDraggable()
@@ -397,8 +397,8 @@ local function ZLBQJF_fake_script() -- MainFrame.drag
 	
 	makeDraggable()
 end
-coroutine.wrap(ZLBQJF_fake_script)()
-local function BFQFS_fake_script() -- CloseAllGui.LocalScript 
+coroutine.wrap(BVHVJF_fake_script)()
+local function HGRH_fake_script() -- CloseAllGui.LocalScript 
 	local script = Instance.new('LocalScript', CloseAllGui)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -425,8 +425,8 @@ local function BFQFS_fake_script() -- CloseAllGui.LocalScript
 	end)
 	
 end
-coroutine.wrap(BFQFS_fake_script)()
-local function QYKPJAH_fake_script() -- counter.LocalScript 
+coroutine.wrap(HGRH_fake_script)()
+local function YJFFZCH_fake_script() -- counter.LocalScript 
 	local script = Instance.new('LocalScript', counter)
 
 	--[[
@@ -465,7 +465,7 @@ local function QYKPJAH_fake_script() -- counter.LocalScript
 		end
 	
 		-- Format the text. Now it explicitly shows the session count.
-		TextLabel.Text = sessionKills .. "0"
+		TextLabel.Text = sessionKills .. ""
 	end
 	
 	-- 3. Main logic to find the Kills value and set up the listener
@@ -494,8 +494,8 @@ local function QYKPJAH_fake_script() -- counter.LocalScript
 	-- Start the tracking setup
 	setupKillTracker()
 end
-coroutine.wrap(QYKPJAH_fake_script)()
-local function PXIY_fake_script() -- FPS.LocalScript 
+coroutine.wrap(YJFFZCH_fake_script)()
+local function VSNVWR_fake_script() -- FPS.LocalScript 
 	local script = Instance.new('LocalScript', FPS)
 
 	local textLabel = script.Parent
@@ -516,8 +516,8 @@ local function PXIY_fake_script() -- FPS.LocalScript
 	end)
 	
 end
-coroutine.wrap(PXIY_fake_script)()
-local function QSOFQUI_fake_script() -- Ping.LocalScript 
+coroutine.wrap(VSNVWR_fake_script)()
+local function BHWLQ_fake_script() -- Ping.LocalScript 
 	local script = Instance.new('LocalScript', Ping)
 
 	local textLabel = script.Parent
@@ -534,8 +534,8 @@ local function QSOFQUI_fake_script() -- Ping.LocalScript
 	end
 	
 end
-coroutine.wrap(QSOFQUI_fake_script)()
-local function ORAX_fake_script() -- Timer_2.LocalScript 
+coroutine.wrap(BHWLQ_fake_script)()
+local function NRAHP_fake_script() -- Timer_2.LocalScript 
 	local script = Instance.new('LocalScript', Timer_2)
 
 	local textLabel = script.Parent
@@ -555,8 +555,8 @@ local function ORAX_fake_script() -- Timer_2.LocalScript
 		task.wait(1)
 	end
 end
-coroutine.wrap(ORAX_fake_script)()
-local function CWQHFK_fake_script() -- TP.LocalScript 
+coroutine.wrap(NRAHP_fake_script)()
+local function LGYAP_fake_script() -- TP.LocalScript 
 	local script = Instance.new('LocalScript', TP)
 
 	local Players = game:GetService("Players")
@@ -579,8 +579,8 @@ local function CWQHFK_fake_script() -- TP.LocalScript
 	end)
 	
 end
-coroutine.wrap(CWQHFK_fake_script)()
-local function QBRZLXM_fake_script() -- TP_2.LocalScript 
+coroutine.wrap(LGYAP_fake_script)()
+local function KCEM_fake_script() -- TP_2.LocalScript 
 	local script = Instance.new('LocalScript', TP_2)
 
 	local Players = game:GetService("Players")
@@ -603,8 +603,8 @@ local function QBRZLXM_fake_script() -- TP_2.LocalScript
 	end)
 	
 end
-coroutine.wrap(QBRZLXM_fake_script)()
-local function JBKNFRD_fake_script() -- TP_3.LocalScript 
+coroutine.wrap(KCEM_fake_script)()
+local function GNXYQW_fake_script() -- TP_3.LocalScript 
 	local script = Instance.new('LocalScript', TP_3)
 
 	local Players = game:GetService("Players")
@@ -627,8 +627,8 @@ local function JBKNFRD_fake_script() -- TP_3.LocalScript
 	end)
 	
 end
-coroutine.wrap(JBKNFRD_fake_script)()
-local function XIJSKB_fake_script() -- TP_4.LocalScript 
+coroutine.wrap(GNXYQW_fake_script)()
+local function SPXMEVM_fake_script() -- TP_4.LocalScript 
 	local script = Instance.new('LocalScript', TP_4)
 
 	local Players = game:GetService("Players")
@@ -651,8 +651,8 @@ local function XIJSKB_fake_script() -- TP_4.LocalScript
 	end)
 	
 end
-coroutine.wrap(XIJSKB_fake_script)()
-local function SQRENKR_fake_script() -- reset.LocalScript 
+coroutine.wrap(SPXMEVM_fake_script)()
+local function RPRXLFR_fake_script() -- reset.LocalScript 
 	local script = Instance.new('LocalScript', reset)
 
 	
@@ -817,8 +817,8 @@ local function SQRENKR_fake_script() -- reset.LocalScript
 	
 	
 end
-coroutine.wrap(SQRENKR_fake_script)()
-local function LTKWMIX_fake_script() -- rj.LocalScript 
+coroutine.wrap(RPRXLFR_fake_script)()
+local function XLJIMV_fake_script() -- rj.LocalScript 
 	local script = Instance.new('LocalScript', rj)
 
 	
@@ -834,8 +834,8 @@ local function LTKWMIX_fake_script() -- rj.LocalScript
 	end)
 	
 end
-coroutine.wrap(LTKWMIX_fake_script)()
-local function IWPZPT_fake_script() -- freeeeze.LocalScript 
+coroutine.wrap(XLJIMV_fake_script)()
+local function LGJCK_fake_script() -- freeeeze.LocalScript 
 	local script = Instance.new('LocalScript', freeeeze)
 
 	local button = script.Parent
@@ -893,8 +893,8 @@ local function IWPZPT_fake_script() -- freeeeze.LocalScript
 	
 	button.MouseButton1Click:Connect(toggleStuck)
 end
-coroutine.wrap(IWPZPT_fake_script)()
-local function HEGGQON_fake_script() -- AutoClaim.LocalScript 
+coroutine.wrap(LGJCK_fake_script)()
+local function YOSIRQV_fake_script() -- AutoClaim.LocalScript 
 	local script = Instance.new('LocalScript', AutoClaim)
 
 	local Players = game:GetService("Players")
@@ -933,8 +933,8 @@ local function HEGGQON_fake_script() -- AutoClaim.LocalScript
 	end)
 	
 end
-coroutine.wrap(HEGGQON_fake_script)()
-local function QAFGB_fake_script() -- antiafk.LocalScript 
+coroutine.wrap(YOSIRQV_fake_script)()
+local function CYEM_fake_script() -- antiafk.LocalScript 
 	local script = Instance.new('LocalScript', antiafk)
 
 	local Players = game:GetService("Players")
@@ -963,4 +963,4 @@ local function QAFGB_fake_script() -- antiafk.LocalScript
 	end)
 	
 end
-coroutine.wrap(QAFGB_fake_script)()
+coroutine.wrap(CYEM_fake_script)()
