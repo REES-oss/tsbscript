@@ -1,0 +1,966 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local CloseAllGui = Instance.new("TextButton")
+local ScriptFrame = Instance.new("Frame")
+local CurrentKills = Instance.new("TextLabel")
+local counter = Instance.new("TextLabel")
+local FPS = Instance.new("TextLabel")
+local Ping = Instance.new("TextLabel")
+local Timer = Instance.new("TextLabel")
+local Timer_2 = Instance.new("TextLabel")
+local TP = Instance.new("TextButton")
+local text = Instance.new("TextLabel")
+local TP_2 = Instance.new("TextButton")
+local TP_3 = Instance.new("TextButton")
+local TP_4 = Instance.new("TextButton")
+local foralt = Instance.new("TextLabel")
+local reset = Instance.new("TextButton")
+local rj = Instance.new("TextButton")
+local freeeeze = Instance.new("TextButton")
+local text_2 = Instance.new("TextLabel")
+local AutoClaim = Instance.new("TextButton")
+local antiafk = Instance.new("TextButton")
+local Title_2 = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.363341957, 0, 0.0691421255, 0)
+MainFrame.Size = UDim2.new(0, 400, 0, 537)
+
+UICorner.Parent = MainFrame
+
+Title.Name = "Title"
+Title.Parent = MainFrame
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.LayoutOrder = 1
+Title.Position = UDim2.new(0.0149999997, 0, 0.0130353821, 0)
+Title.Size = UDim2.new(0, 400, 0, 30)
+Title.Font = Enum.Font.SourceSansBold
+Title.Text = "Simple TSB Farm Script"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 36.000
+Title.TextWrapped = true
+
+CloseAllGui.Name = "CloseAllGui"
+CloseAllGui.Parent = MainFrame
+CloseAllGui.BackgroundColor3 = Color3.fromRGB(85, 0, 255)
+CloseAllGui.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CloseAllGui.BorderSizePixel = 0
+CloseAllGui.Position = UDim2.new(0.115000002, 0, 0.862197399, 0)
+CloseAllGui.Size = UDim2.new(0, 320, 0, 42)
+CloseAllGui.Font = Enum.Font.SourceSansBold
+CloseAllGui.Text = "Close UI ( trigger by clicking R )"
+CloseAllGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseAllGui.TextScaled = true
+CloseAllGui.TextSize = 14.000
+CloseAllGui.TextWrapped = true
+
+ScriptFrame.Name = "ScriptFrame"
+ScriptFrame.Parent = MainFrame
+ScriptFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+ScriptFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScriptFrame.BorderSizePixel = 0
+ScriptFrame.Position = UDim2.new(0.115000002, 0, 0.0893854499, 0)
+ScriptFrame.Size = UDim2.new(0, 320, 0, 405)
+
+CurrentKills.Name = "CurrentKills"
+CurrentKills.Parent = ScriptFrame
+CurrentKills.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CurrentKills.BackgroundTransparency = 1.000
+CurrentKills.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CurrentKills.BorderSizePixel = 0
+CurrentKills.Position = UDim2.new(0.0187500007, 0, 0.01728395, 0)
+CurrentKills.Size = UDim2.new(0, 86, 0, 11)
+CurrentKills.Font = Enum.Font.SourceSans
+CurrentKills.Text = "Current Kills:"
+CurrentKills.TextColor3 = Color3.fromRGB(255, 255, 255)
+CurrentKills.TextSize = 14.000
+
+counter.Name = "counter"
+counter.Parent = CurrentKills
+counter.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+counter.BackgroundTransparency = 1.000
+counter.BorderColor3 = Color3.fromRGB(0, 0, 0)
+counter.BorderSizePixel = 0
+counter.Position = UDim2.new(0.995494783, 0, -0.073625043, 0)
+counter.Size = UDim2.new(0, 17, 0, 11)
+counter.Font = Enum.Font.SourceSans
+counter.Text = ""
+counter.TextColor3 = Color3.fromRGB(255, 255, 255)
+counter.TextSize = 14.000
+
+FPS.Name = "FPS"
+FPS.Parent = ScriptFrame
+FPS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FPS.BackgroundTransparency = 1.000
+FPS.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FPS.BorderSizePixel = 0
+FPS.Position = UDim2.new(0.381249994, 0, 0.01728395, 0)
+FPS.Size = UDim2.new(0, 86, 0, 11)
+FPS.Font = Enum.Font.SourceSans
+FPS.Text = "FPS:"
+FPS.TextColor3 = Color3.fromRGB(255, 255, 255)
+FPS.TextSize = 14.000
+
+Ping.Name = "Ping"
+Ping.Parent = ScriptFrame
+Ping.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Ping.BackgroundTransparency = 1.000
+Ping.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Ping.BorderSizePixel = 0
+Ping.Position = UDim2.new(0.684374988, 0, 0.01728395, 0)
+Ping.Size = UDim2.new(0, 86, 0, 11)
+Ping.Font = Enum.Font.SourceSans
+Ping.Text = "Ping:"
+Ping.TextColor3 = Color3.fromRGB(255, 255, 255)
+Ping.TextSize = 14.000
+
+Timer.Name = "Timer"
+Timer.Parent = ScriptFrame
+Timer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Timer.BackgroundTransparency = 1.000
+Timer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Timer.BorderSizePixel = 0
+Timer.Position = UDim2.new(0, 0, 0.955555558, 0)
+Timer.Size = UDim2.new(0, 86, 0, 11)
+Timer.Font = Enum.Font.SourceSans
+Timer.Text = "time:      "
+Timer.TextColor3 = Color3.fromRGB(255, 255, 255)
+Timer.TextSize = 14.000
+
+Timer_2.Name = "Timer"
+Timer_2.Parent = Timer
+Timer_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Timer_2.BackgroundTransparency = 1.000
+Timer_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Timer_2.BorderSizePixel = 0
+Timer_2.Position = UDim2.new(0.593023241, 0, 0.0909090936, 0)
+Timer_2.Size = UDim2.new(0, 41, 0, 10)
+Timer_2.Font = Enum.Font.SourceSans
+Timer_2.Text = "00:00"
+Timer_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Timer_2.TextSize = 14.000
+
+TP.Name = "TP"
+TP.Parent = ScriptFrame
+TP.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TP.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TP.BorderSizePixel = 0
+TP.LayoutOrder = 1
+TP.Position = UDim2.new(0.0406249985, 0, 0.17037037, 0)
+TP.Size = UDim2.new(0, 109, 0, 21)
+TP.Font = Enum.Font.SourceSansBold
+TP.Text = "TP White Baseplate"
+TP.TextColor3 = Color3.fromRGB(255, 255, 255)
+TP.TextScaled = true
+TP.TextSize = 14.000
+TP.TextWrapped = true
+
+text.Name = "text"
+text.Parent = ScriptFrame
+text.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+text.BorderColor3 = Color3.fromRGB(0, 0, 0)
+text.BorderSizePixel = 0
+text.LayoutOrder = 1
+text.Position = UDim2.new(0.0410000011, 0, 0.0939999968, 0)
+text.Size = UDim2.new(0, 297, 0, 22)
+text.Font = Enum.Font.SourceSansBold
+text.Text = "TP PLACE ( Optional )"
+text.TextColor3 = Color3.fromRGB(255, 255, 255)
+text.TextScaled = true
+text.TextSize = 14.000
+text.TextWrapped = true
+
+TP_2.Name = "TP"
+TP_2.Parent = ScriptFrame
+TP_2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TP_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TP_2.BorderSizePixel = 0
+TP_2.LayoutOrder = 1
+TP_2.Position = UDim2.new(0.0406249985, 0, 0.241975307, 0)
+TP_2.Size = UDim2.new(0, 109, 0, 21)
+TP_2.Font = Enum.Font.SourceSansBold
+TP_2.Text = "TP Death Counter Area"
+TP_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TP_2.TextScaled = true
+TP_2.TextSize = 14.000
+TP_2.TextWrapped = true
+
+TP_3.Name = "TP"
+TP_3.Parent = ScriptFrame
+TP_3.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TP_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TP_3.BorderSizePixel = 0
+TP_3.LayoutOrder = 1
+TP_3.Position = UDim2.new(0.425000012, 0, 0.17037037, 0)
+TP_3.Size = UDim2.new(0, 109, 0, 21)
+TP_3.Font = Enum.Font.SourceSansBold
+TP_3.Text = "TP Small Place"
+TP_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TP_3.TextScaled = true
+TP_3.TextSize = 14.000
+TP_3.TextWrapped = true
+
+TP_4.Name = "TP"
+TP_4.Parent = ScriptFrame
+TP_4.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TP_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TP_4.BorderSizePixel = 0
+TP_4.LayoutOrder = 1
+TP_4.Position = UDim2.new(0.425000012, 0, 0.241975307, 0)
+TP_4.Size = UDim2.new(0, 109, 0, 21)
+TP_4.Font = Enum.Font.SourceSansBold
+TP_4.Text = "TP Mountain"
+TP_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TP_4.TextScaled = true
+TP_4.TextSize = 14.000
+TP_4.TextWrapped = true
+
+foralt.Name = "foralt"
+foralt.Parent = ScriptFrame
+foralt.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+foralt.BorderColor3 = Color3.fromRGB(0, 0, 0)
+foralt.BorderSizePixel = 0
+foralt.LayoutOrder = 1
+foralt.Position = UDim2.new(0.0409999862, 0, 0.328567922, 0)
+foralt.Size = UDim2.new(0, 297, 0, 22)
+foralt.Font = Enum.Font.SourceSansBold
+foralt.Text = "For ALT"
+foralt.TextColor3 = Color3.fromRGB(255, 255, 255)
+foralt.TextScaled = true
+foralt.TextSize = 14.000
+foralt.TextWrapped = true
+
+reset.Name = "reset"
+reset.Parent = ScriptFrame
+reset.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+reset.BorderColor3 = Color3.fromRGB(0, 0, 0)
+reset.BorderSizePixel = 0
+reset.LayoutOrder = 1
+reset.Position = UDim2.new(0.0406249985, 0, 0.400000006, 0)
+reset.Size = UDim2.new(0, 109, 0, 23)
+reset.Font = Enum.Font.SourceSansBold
+reset.Text = "AutoReset: OFF"
+reset.TextColor3 = Color3.fromRGB(255, 255, 255)
+reset.TextScaled = true
+reset.TextSize = 14.000
+reset.TextWrapped = true
+
+rj.Name = "rj"
+rj.Parent = ScriptFrame
+rj.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+rj.BorderColor3 = Color3.fromRGB(0, 0, 0)
+rj.BorderSizePixel = 0
+rj.LayoutOrder = 1
+rj.Position = UDim2.new(0.422249973, 0, 0.400000006, 0)
+rj.Size = UDim2.new(0, 102, 0, 23)
+rj.Font = Enum.Font.SourceSansBold
+rj.Text = "Rejoin ( if alt is bugged )"
+rj.TextColor3 = Color3.fromRGB(255, 255, 255)
+rj.TextScaled = true
+rj.TextSize = 14.000
+rj.TextWrapped = true
+
+freeeeze.Name = "freeeeze"
+freeeeze.Parent = ScriptFrame
+freeeeze.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+freeeeze.BorderColor3 = Color3.fromRGB(0, 0, 0)
+freeeeze.BorderSizePixel = 0
+freeeeze.LayoutOrder = 1
+freeeeze.Position = UDim2.new(0.0378749855, 0, 0.474074066, 0)
+freeeeze.Size = UDim2.new(0, 109, 0, 21)
+freeeeze.Font = Enum.Font.SourceSansBold
+freeeeze.Text = "Freeze Spawn: OFF"
+freeeeze.TextColor3 = Color3.fromRGB(255, 255, 255)
+freeeeze.TextScaled = true
+freeeeze.TextSize = 14.000
+freeeeze.TextWrapped = true
+
+text_2.Name = "text"
+text_2.Parent = ScriptFrame
+text_2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+text_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+text_2.BorderSizePixel = 0
+text_2.LayoutOrder = 1
+text_2.Position = UDim2.new(0.0409999862, 0, 0.59276545, 0)
+text_2.Size = UDim2.new(0, 297, 0, 22)
+text_2.Font = Enum.Font.SourceSansBold
+text_2.Text = "Main Stuff"
+text_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+text_2.TextScaled = true
+text_2.TextSize = 14.000
+text_2.TextWrapped = true
+
+AutoClaim.Name = "AutoClaim"
+AutoClaim.Parent = ScriptFrame
+AutoClaim.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+AutoClaim.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoClaim.BorderSizePixel = 0
+AutoClaim.LayoutOrder = 1
+AutoClaim.Position = UDim2.new(0.0409999862, 0, 0.666666687, 0)
+AutoClaim.Size = UDim2.new(0, 108, 0, 24)
+AutoClaim.Font = Enum.Font.SourceSansBold
+AutoClaim.Text = "Auto Claim Emote"
+AutoClaim.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoClaim.TextScaled = true
+AutoClaim.TextSize = 14.000
+AutoClaim.TextWrapped = true
+
+antiafk.Name = "antiafk"
+antiafk.Parent = ScriptFrame
+antiafk.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+antiafk.BorderColor3 = Color3.fromRGB(0, 0, 0)
+antiafk.BorderSizePixel = 0
+antiafk.LayoutOrder = 1
+antiafk.Position = UDim2.new(0.0409999862, 0, 0.743209898, 0)
+antiafk.Size = UDim2.new(0, 108, 0, 21)
+antiafk.Font = Enum.Font.SourceSansBold
+antiafk.Text = "AntiAfk"
+antiafk.TextColor3 = Color3.fromRGB(255, 255, 255)
+antiafk.TextScaled = true
+antiafk.TextSize = 14.000
+antiafk.TextWrapped = true
+
+Title_2.Name = "Title"
+Title_2.Parent = MainFrame
+Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.BackgroundTransparency = 1.000
+Title_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title_2.BorderSizePixel = 0
+Title_2.LayoutOrder = 1
+Title_2.Position = UDim2.new(0.557500005, 0, 0.0577281192, 0)
+Title_2.Size = UDim2.new(0, 68, 0, 17)
+Title_2.Font = Enum.Font.SourceSansBold
+Title_2.Text = "Manual Farming"
+Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.TextScaled = true
+Title_2.TextSize = 36.000
+Title_2.TextWrapped = true
+
+-- Scripts:
+
+local function ZLBQJF_fake_script() -- MainFrame.drag 
+	local script = Instance.new('LocalScript', MainFrame)
+
+	local function makeDraggable()
+		local dragToggle = nil
+		local dragSpeed = 0.1
+		local dragStart = nil
+		local startPos = nil
+		local UIS = game:GetService("UserInputService")
+	
+		local function updateInput(input)
+			local delta = input.Position - dragStart
+			script.Parent.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		end
+	
+		script.Parent.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then
+				dragToggle = true
+				dragStart = input.Position
+				startPos = script.Parent.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragToggle = false
+					end
+				end)
+			end
+		end)
+	
+		script.Parent.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement then
+				if dragToggle then
+					updateInput(input)
+				end
+			end
+		end)
+	end
+	
+	makeDraggable()
+end
+coroutine.wrap(ZLBQJF_fake_script)()
+local function BFQFS_fake_script() -- CloseAllGui.LocalScript 
+	local script = Instance.new('LocalScript', CloseAllGui)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local button = script.Parent
+	local gui = button:FindFirstAncestorOfClass("ScreenGui")
+	
+	button.MouseButton1Click:Connect(function()
+		if gui then
+			gui.Enabled = false
+			print("closed farm ui")
+		end
+	end)
+	
+	UserInputService.InputBegan:Connect(function(input, gameProcessed)
+		if gameProcessed then return end
+	
+		if input.KeyCode == Enum.KeyCode.R then
+			if gui then
+				gui.Enabled = true
+				print("farm ui is triggered again")
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(BFQFS_fake_script)()
+local function QYKPJAH_fake_script() -- counter.LocalScript 
+	local script = Instance.new('LocalScript', counter)
+
+	--[[
+	    This is a LocalScript. It should be placed directly inside the TextLabel
+	    you want to use to display the session kill count.
+	
+	    It tracks the number of kills gained *only* during the current game session,
+	    not the player's lifetime total stored in leaderstats. The counter resets
+	    when the player leaves or the UI is destroyed.
+	--]]
+	
+	-- Services and References
+	local Players = game:GetService("Players")
+	local TextLabel = script.Parent
+	local LocalPlayer = Players.LocalPlayer
+	
+	-- State and Configuration
+	local KILLS_VALUE_NAME = "Kills" -- The name of the value object that holds the overall kill count
+	local LEADERSTATS_FOLDER_NAME = "leaderstats"
+	local initialKillCount = 0 -- Stores the total kill count when the player joined
+	
+	-- 1. Check if the LocalPlayer exists (it should, since this is a LocalScript)
+	if not LocalPlayer then
+		warn("LocalPlayer not found. Script stopping.")
+		return
+	end
+	
+	-- 2. Function to update the TextLabel's text
+	local function updateKillCountDisplay(currentTotalKills)
+		-- Calculate how many kills were gained in *this* session
+		local sessionKills = currentTotalKills - initialKillCount
+	
+		-- Ensure the count is not negative (shouldn't happen, but good practice)
+		if sessionKills < 0 then
+			sessionKills = 0
+		end
+	
+		-- Format the text. Now it explicitly shows the session count.
+		TextLabel.Text = sessionKills .. "0"
+	end
+	
+	-- 3. Main logic to find the Kills value and set up the listener
+	local function setupKillTracker()
+		-- Wait for the leaderstats folder to be added to the player
+		local leaderstats = LocalPlayer:WaitForChild(LEADERSTATS_FOLDER_NAME)
+	
+		-- Wait for the Kills value object to be inside leaderstats
+		local killsValue = leaderstats:WaitForChild(KILLS_VALUE_NAME)
+	
+		-- *** CRITICAL STEP: Record the starting kill total ***
+		initialKillCount = killsValue.Value
+	
+		-- Handle initial display (this will always show 0 Kills at start)
+		updateKillCountDisplay(killsValue.Value)
+	
+		-- Handle future changes (when the kill count updates)
+		killsValue.Changed:Connect(function(newTotalKills)
+			updateKillCountDisplay(newTotalKills)
+		end)
+	
+		print("Waiting for" .. LocalPlayer.Name)
+		print("Added: " .. initialKillCount)
+	end
+	
+	-- Start the tracking setup
+	setupKillTracker()
+end
+coroutine.wrap(QYKPJAH_fake_script)()
+local function PXIY_fake_script() -- FPS.LocalScript 
+	local script = Instance.new('LocalScript', FPS)
+
+	local textLabel = script.Parent
+	
+	local RunService = game:GetService("RunService")
+	
+	local fps = 0
+	local lastUpdate = tick()
+	
+	RunService.RenderStepped:Connect(function()
+		fps = fps + 1
+	
+		if tick() - lastUpdate >= 1 then
+			textLabel.Text = "FPS: " .. fps
+			fps = 0
+			lastUpdate = tick()
+		end
+	end)
+	
+end
+coroutine.wrap(PXIY_fake_script)()
+local function QSOFQUI_fake_script() -- Ping.LocalScript 
+	local script = Instance.new('LocalScript', Ping)
+
+	local textLabel = script.Parent
+	local Stats = game:GetService("Stats")
+	
+	while true do
+		local pingStat = Stats.Network.ServerStatsItem["Data Ping"]
+		if pingStat then
+			local ping = math.floor(pingStat:GetValue()) -- ping in ms
+			textLabel.Text = "Ping: " .. ping .. " ms"
+		end
+	
+		task.wait(1) -- update every 1 second
+	end
+	
+end
+coroutine.wrap(QSOFQUI_fake_script)()
+local function ORAX_fake_script() -- Timer_2.LocalScript 
+	local script = Instance.new('LocalScript', Timer_2)
+
+	local textLabel = script.Parent
+	
+	local seconds = 0
+	
+	while true do
+		seconds += 1
+	
+		local minutes = math.floor(seconds / 60)
+		local secs = seconds % 60
+	
+		-- Format to 00:00
+		local timeString = string.format("%02d:%02d", minutes, secs)
+		textLabel.Text = timeString
+	
+		task.wait(1)
+	end
+end
+coroutine.wrap(ORAX_fake_script)()
+local function CWQHFK_fake_script() -- TP.LocalScript 
+	local script = Instance.new('LocalScript', TP)
+
+	local Players = game:GetService("Players")
+	
+	local player = Players.LocalPlayer
+	local button = script.Parent
+	
+	local TARGET_POSITION = Vector3.new(1063, 406, 23006)
+	
+	button.MouseButton1Click:Connect(function()
+		local character = player.Character or player.CharacterAdded:Wait()
+		local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+	
+		if humanoidRootPart then
+			humanoidRootPart.CFrame = CFrame.new(TARGET_POSITION)
+			print("tp")
+		else
+			print("HumanoidRootPart not found")
+		end
+	end)
+	
+end
+coroutine.wrap(CWQHFK_fake_script)()
+local function QBRZLXM_fake_script() -- TP_2.LocalScript 
+	local script = Instance.new('LocalScript', TP_2)
+
+	local Players = game:GetService("Players")
+	
+	local player = Players.LocalPlayer
+	local button = script.Parent
+	
+	local TARGET_POSITION = Vector3.new(-68, 29, 20346)
+	
+	button.MouseButton1Click:Connect(function()
+		local character = player.Character or player.CharacterAdded:Wait()
+		local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+	
+		if humanoidRootPart then
+			humanoidRootPart.CFrame = CFrame.new(TARGET_POSITION)
+			print("tp")
+		else
+			print("HumanoidRootPart not found")
+		end
+	end)
+	
+end
+coroutine.wrap(QBRZLXM_fake_script)()
+local function JBKNFRD_fake_script() -- TP_3.LocalScript 
+	local script = Instance.new('LocalScript', TP_3)
+
+	local Players = game:GetService("Players")
+	
+	local player = Players.LocalPlayer
+	local button = script.Parent
+	
+	local TARGET_POSITION = Vector3.new(365, 440, 434)
+	
+	button.MouseButton1Click:Connect(function()
+		local character = player.Character or player.CharacterAdded:Wait()
+		local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+	
+		if humanoidRootPart then
+			humanoidRootPart.CFrame = CFrame.new(TARGET_POSITION)
+			print("tp")
+		else
+			print("HumanoidRootPart not found")
+		end
+	end)
+	
+end
+coroutine.wrap(JBKNFRD_fake_script)()
+local function XIJSKB_fake_script() -- TP_4.LocalScript 
+	local script = Instance.new('LocalScript', TP_4)
+
+	local Players = game:GetService("Players")
+	
+	local player = Players.LocalPlayer
+	local button = script.Parent
+	
+	local TARGET_POSITION = Vector3.new(155, 629, -447)
+	
+	button.MouseButton1Click:Connect(function()
+		local character = player.Character or player.CharacterAdded:Wait()
+		local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+	
+		if humanoidRootPart then
+			humanoidRootPart.CFrame = CFrame.new(TARGET_POSITION)
+			print("tp")
+		else
+			print("HumanoidRootPart not found")
+		end
+	end)
+	
+end
+coroutine.wrap(XIJSKB_fake_script)()
+local function SQRENKR_fake_script() -- reset.LocalScript 
+	local script = Instance.new('LocalScript', reset)
+
+	
+	local button = script.Parent
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	
+	local player = Players.LocalPlayer
+	
+	-- Auto Reset and Stuck System
+	local autoResetEnabled = false
+	local connection
+	local characterAddedConnection
+	
+	-- Stuck system variables
+	local stuckPosition = nil
+	local loopConnection = nil
+	
+	------------------------------------------------
+	-- Helper Functions
+	------------------------------------------------
+	
+	-- Freeze player movement
+	local function disableMovement()
+		local character = player.Character
+		if not character then return end
+		local humanoid = character:FindFirstChildOfClass("Humanoid")
+		if humanoid then
+			humanoid.WalkSpeed = 0
+			humanoid.JumpPower = 0
+		end
+	end
+	
+	-- Restore player movement
+	local function enableMovement()
+		local character = player.Character
+		if not character then return end
+		local humanoid = character:FindFirstChildOfClass("Humanoid")
+		if humanoid then
+			humanoid.WalkSpeed = 16
+			humanoid.JumpPower = 50
+		end
+	end
+	
+	-- Start Stuck Loop (keeps player at same position)
+	local function startStuckLoop()
+		if loopConnection then
+			loopConnection:Disconnect()
+		end
+	
+		loopConnection = RunService.Heartbeat:Connect(function()
+			if player.Character and player.Character:FindFirstChild("HumanoidRootPart") and stuckPosition then
+				player.Character:MoveTo(stuckPosition)
+			end
+		end)
+	end
+	
+	-- Stop the stuck loop
+	local function stopStuckLoop()
+		if loopConnection then
+			loopConnection:Disconnect()
+			loopConnection = nil
+		end
+	end
+	
+	------------------------------------------------
+	-- Main AutoReset + Stuck Toggle
+	------------------------------------------------
+	local function toggleAutoReset()
+		autoResetEnabled = not autoResetEnabled
+	
+		if autoResetEnabled then
+			button.Text = "AutoReset: ON"
+	
+			-- Save player position when activated
+			local char = player.Character
+			if char and char:FindFirstChild("HumanoidRootPart") then
+				stuckPosition = char.HumanoidRootPart.Position
+				startStuckLoop()
+			end
+	
+			-- Function to handle humanoid setup
+			local function setupHumanoid(humanoid)
+				if connection then
+					connection:Disconnect()
+				end
+	
+				connection = humanoid.HealthChanged:Connect(function(health)
+					if autoResetEnabled and health < humanoid.MaxHealth then
+						-- Instantly kill (auto-reset)
+						humanoid.Health = 0
+						disableMovement()
+					end
+				end)
+	
+				humanoid.Died:Connect(function()
+					disableMovement()
+				end)
+			end
+	
+			-- Setup current character
+			if player.Character then
+				local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
+				if humanoid then
+					setupHumanoid(humanoid)
+				end
+			end
+	
+			-- Handle respawn
+			if characterAddedConnection then
+				characterAddedConnection:Disconnect()
+			end
+	
+			characterAddedConnection = player.CharacterAdded:Connect(function(char)
+				local humanoid = char:WaitForChild("Humanoid")
+				local root = char:WaitForChild("HumanoidRootPart")
+	
+				------------------------------------------------
+				-- 🧊 NEW SECTION: Freeze on reset, then unfreeze
+				------------------------------------------------
+				task.wait(0.5)
+				stuckPosition = root.Position
+				disableMovement()
+				startStuckLoop()
+	
+				-- Auto-unfreeze after a few seconds
+				local freezeDuration = 3 -- ⏳ Change this number if you want longer/shorter freeze
+				task.delay(freezeDuration, function()
+					stopStuckLoop()
+					enableMovement()
+				end)
+				------------------------------------------------
+	
+				setupHumanoid(humanoid)
+			end)
+	
+		else
+			button.Text = "AutoReset: OFF"
+	
+			-- Disconnect everything
+			if connection then
+				connection:Disconnect()
+				connection = nil
+			end
+			if characterAddedConnection then
+				characterAddedConnection:Disconnect()
+				characterAddedConnection = nil
+			end
+	
+			stuckPosition = nil
+			stopStuckLoop()
+			enableMovement()
+		end
+	end
+	
+	------------------------------------------------
+	-- Setup Button
+	------------------------------------------------
+	button.MouseButton1Click:Connect(toggleAutoReset)
+	button.Text = "AutoReset: OFF"
+	
+	
+	
+end
+coroutine.wrap(SQRENKR_fake_script)()
+local function LTKWMIX_fake_script() -- rj.LocalScript 
+	local script = Instance.new('LocalScript', rj)
+
+	
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local TeleportService = game:GetService("TeleportService")
+		local Players = game:GetService("Players")
+		local player = Players.LocalPlayer
+		local placeId = game.PlaceId
+	
+		TeleportService:Teleport(placeId, player)
+	end)
+	
+end
+coroutine.wrap(LTKWMIX_fake_script)()
+local function IWPZPT_fake_script() -- freeeeze.LocalScript 
+	local script = Instance.new('LocalScript', freeeeze)
+
+	local button = script.Parent
+	local Players = game:GetService("Players")
+	local player = Players.LocalPlayer
+	
+	local stuckEnabled = false
+	local stuckPosition = nil
+	local loopConnection = nil
+	
+	local function startStuckLoop()
+		if loopConnection then
+			loopConnection:Disconnect()
+		end
+	
+		loopConnection = game:GetService("RunService").Heartbeat:Connect(function()
+			if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+				player.Character:MoveTo(stuckPosition)
+			end
+		end)
+	end
+	
+	
+	local function onCharacterAdded(character)
+		if stuckEnabled and stuckPosition then
+	
+			character:WaitForChild("HumanoidRootPart")
+			startStuckLoop()
+		end
+	end
+	
+	local function toggleStuck()
+		stuckEnabled = not stuckEnabled
+	
+		if stuckEnabled then
+			button.Text = "Freeze Spawn: ON"
+	
+	
+			local char = player.Character
+			if char and char:FindFirstChild("HumanoidRootPart") then
+				stuckPosition = char.HumanoidRootPart.Position
+				startStuckLoop()
+			end
+	
+			player.CharacterAdded:Connect(onCharacterAdded)
+		else
+			button.Text = "Freeze Spawn: OFF"
+			stuckPosition = nil
+			if loopConnection then
+				loopConnection:Disconnect()
+				loopConnection = nil
+			end
+		end
+	end
+	
+	button.MouseButton1Click:Connect(toggleStuck)
+end
+coroutine.wrap(IWPZPT_fake_script)()
+local function HEGGQON_fake_script() -- AutoClaim.LocalScript 
+	local script = Instance.new('LocalScript', AutoClaim)
+
+	local Players = game:GetService("Players")
+	local player = Players.LocalPlayer
+	local button = script.Parent
+	
+	local running = false
+	
+	button.MouseButton1Click:Connect(function()
+		if running then
+			print("Running emote auto claimer")
+			return
+		end
+	
+		running = true
+		print("auto claim started")
+	
+		task.spawn(function()
+			while running do
+				task.wait(0.1)
+	
+				local character = player.Character
+				if character then
+					local comm = character:FindFirstChild("Communicate")
+					if comm then
+						comm:FireServer({
+							Goal = "Emote Spin"
+						})
+						print("Claimed emote")
+					else
+						print("communicate not found.. error")
+					end
+				end
+			end
+		end)
+	end)
+	
+end
+coroutine.wrap(HEGGQON_fake_script)()
+local function QAFGB_fake_script() -- antiafk.LocalScript 
+	local script = Instance.new('LocalScript', antiafk)
+
+	local Players = game:GetService("Players")
+	local VirtualUser = game:GetService("VirtualUser")
+	
+	local player = Players.LocalPlayer
+	local button = script.Parent
+	
+	local enabled = false
+	
+	button.MouseButton1Click:Connect(function()
+		if enabled then
+			print("anti afk is already running")
+			return
+		end
+	
+		enabled = true
+		print("anti afk triggered")
+	
+		player.Idled:Connect(function()
+			if not enabled then return end
+			VirtualUser:CaptureController()
+			VirtualUser:ClickButton2(Vector2.new())
+			print("fail to kick player.. afk triggered!")
+		end)
+	end)
+	
+end
+coroutine.wrap(QAFGB_fake_script)()
